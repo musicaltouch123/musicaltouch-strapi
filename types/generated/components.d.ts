@@ -50,6 +50,7 @@ export interface SharedAboutAndCsrSecondComponent
   attributes: {
     additional_text: Schema.Attribute.Text;
     description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link_for_additional_text: Schema.Attribute.String;
     quote: Schema.Attribute.Component<'shared.quote', false>;
     section_name: Schema.Attribute.String;
