@@ -12,12 +12,30 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "hero": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": false
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "our_story": {
+      "type": "component",
+      "component": "shared.about-our-story",
+      "repeatable": false
+    },
+    "meet_our_founder": {
+      "type": "component",
+      "component": "shared.about-and-csr-second-component",
+      "repeatable": false
+    },
+    "in_the_media": {
+      "type": "component",
+      "component": "shared.about-and-csr-partners",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
     }
   }
 }

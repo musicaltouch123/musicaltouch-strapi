@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_about_and_csr_partners",
+  "info": {
+    "displayName": "About & CSR partners"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

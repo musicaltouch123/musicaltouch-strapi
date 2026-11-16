@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_about_our_stories",
+  "info": {
+    "displayName": "About Our Story"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "stats": {
+      "type": "component",
+      "component": "shared.quote",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

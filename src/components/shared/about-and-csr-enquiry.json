@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_about_and_csr_enquiries",
+  "info": {
+    "displayName": "About & CSR Enquiry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

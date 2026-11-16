@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_about_and_csr_second_components",
+  "info": {
+    "displayName": "About & CSR Second Component"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "quote": {
+      "type": "component",
+      "component": "shared.quote",
+      "repeatable": false
+    },
+    "additional_text": {
+      "type": "text"
+    },
+    "link_for_additional_text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

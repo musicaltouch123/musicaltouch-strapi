@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "csrs",
+  "info": {
+    "singularName": "csr",
+    "pluralName": "csrs",
+    "displayName": "CSR"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": false
+    },
+    "afternoons": {
+      "type": "component",
+      "component": "shared.about-and-csr-second-component",
+      "repeatable": false
+    },
+    "performed_for": {
+      "type": "component",
+      "component": "shared.about-and-csr-partners",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_about_and_csr_first_components",
+  "info": {
+    "displayName": "About & CSR First Component"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
