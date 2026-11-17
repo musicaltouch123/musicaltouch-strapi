@@ -80,7 +80,10 @@ export interface SharedMedia extends Struct.ComponentSchema {
     displayName: 'Media';
     icon: 'file-video';
   };
-  attributes: {};
+  attributes: {
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
 }
 
 export interface SharedQuote extends Struct.ComponentSchema {
