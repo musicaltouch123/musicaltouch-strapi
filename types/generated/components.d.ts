@@ -22,7 +22,10 @@ export interface SharedAboutAndCsrFirstComponent
   attributes: {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
