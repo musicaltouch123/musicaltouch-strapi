@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_experience_sections",
+  "info": {
+    "displayName": "Experience Section"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "youtube_link": {
+      "type": "string"
+    },
+    "video_autoplay": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

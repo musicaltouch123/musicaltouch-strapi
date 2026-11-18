@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_tiles_sections",
+  "info": {
+    "displayName": "Tiles section"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "text"
+    },
+    "image_tiles": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": true
+    },
+    "additional_text": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

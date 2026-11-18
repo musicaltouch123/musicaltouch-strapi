@@ -74,6 +74,65 @@ export interface SharedAboutOurStory extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCommonHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_common_heroes';
+  info: {
+    displayName: 'Common hero with image';
+  };
+  attributes: {
+    additional_text: Schema.Attribute.Text;
+    button_one_link: Schema.Attribute.String;
+    button_one_text: Schema.Attribute.String;
+    button_two_link: Schema.Attribute.String;
+    button_two_text: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Text;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SharedCommonHeroWithoutImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_common_hero_without_images';
+  info: {
+    displayName: 'Common hero without image';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedExperienceSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_experience_sections';
+  info: {
+    displayName: 'Experience Section';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+    video_autoplay: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    youtube_link: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHeadingSubHeadingAndRepeatedLine
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heading_sub_heading_and_repeated_lines';
+  info: {
+    displayName: 'Heading, sub heading and repeated line';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    sub_heading: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -137,6 +196,72 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_texts';
+  info: {
+    displayName: 'Text';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTilesSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tiles_sections';
+  info: {
+    displayName: 'Tiles section';
+  };
+  attributes: {
+    additional_text: Schema.Attribute.String;
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    heading: Schema.Attribute.Text;
+    image_tiles: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      true
+    >;
+    section_name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTimelineItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_items';
+  info: {
+    displayName: 'Timeline item';
+  };
+  attributes: {
+    highlighted: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    time: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTimelineSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_sections';
+  info: {
+    displayName: 'Timeline section';
+  };
+  attributes: {
+    close_text: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    optional_sets: Schema.Attribute.Component<
+      'shared.heading-sub-heading-and-repeated-line',
+      false
+    >;
+    performance_sets: Schema.Attribute.Component<
+      'shared.heading-sub-heading-and-repeated-line',
+      false
+    >;
+    timeline: Schema.Attribute.Component<'shared.timeline-item', true>;
+    tnc: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
@@ -145,11 +270,19 @@ declare module '@strapi/strapi' {
       'shared.about-and-csr-partners': SharedAboutAndCsrPartners;
       'shared.about-and-csr-second-component': SharedAboutAndCsrSecondComponent;
       'shared.about-our-story': SharedAboutOurStory;
+      'shared.common-hero': SharedCommonHero;
+      'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
+      'shared.experience-section': SharedExperienceSection;
+      'shared.heading-sub-heading-and-repeated-line': SharedHeadingSubHeadingAndRepeatedLine;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.text': SharedText;
+      'shared.tiles-section': SharedTilesSection;
+      'shared.timeline-item': SharedTimelineItem;
+      'shared.timeline-section': SharedTimelineSection;
     }
   }
 }

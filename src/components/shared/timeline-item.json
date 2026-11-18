@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_timeline_items",
+  "info": {
+    "displayName": "Timeline item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "highlighted": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "time": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

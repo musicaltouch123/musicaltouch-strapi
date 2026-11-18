@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_heading_sub_heading_and_repeated_lines",
+  "info": {
+    "displayName": "Heading, sub heading and repeated line"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

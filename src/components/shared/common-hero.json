@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_shared_common_heroes",
+  "info": {
+    "displayName": "Common hero with image"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "additional_text": {
+      "type": "text"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button_one_text": {
+      "type": "string"
+    },
+    "button_one_link": {
+      "type": "string"
+    },
+    "button_two_text": {
+      "type": "string"
+    },
+    "button_two_link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

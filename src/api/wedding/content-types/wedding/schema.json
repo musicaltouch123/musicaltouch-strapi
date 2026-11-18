@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "weddings",
+  "info": {
+    "singularName": "wedding",
+    "pluralName": "weddings",
+    "displayName": "Wedding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.common-hero",
+      "repeatable": false
+    },
+    "experience": {
+      "type": "component",
+      "component": "shared.experience-section",
+      "repeatable": false
+    },
+    "how_band_fits": {
+      "type": "component",
+      "component": "shared.tiles-section",
+      "repeatable": false
+    },
+    "timeline_box": {
+      "type": "component",
+      "component": "shared.timeline-section",
+      "repeatable": false
+    }
+  }
+}

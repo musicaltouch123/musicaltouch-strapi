@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_common_hero_without_images",
+  "info": {
+    "displayName": "Common hero without image"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
