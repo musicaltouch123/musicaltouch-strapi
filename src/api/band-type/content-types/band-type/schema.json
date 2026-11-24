@@ -29,6 +29,43 @@
     },
     "page_link_if_any": {
       "type": "string"
+    },
+    "band_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::band-category.band-category",
+      "inversedBy": "band_types"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "ambiance": {
+      "type": "string"
+    },
+    "sound": {
+      "type": "string"
+    },
+    "atmosphare": {
+      "type": "string"
+    },
+    "best_for": {
+      "type": "string"
+    },
+    "typical_line_up": {
+      "type": "string"
+    },
+    "signature_video_link": {
+      "type": "string"
+    },
+    "cover_if_any": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

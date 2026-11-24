@@ -558,6 +558,39 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBandCategoryBandCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'band_categories';
+  info: {
+    displayName: 'Band Category';
+    pluralName: 'band-categories';
+    singularName: 'band-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    band_types: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::band-type.band-type'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::band-category.band-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBandTypeBandType extends Struct.CollectionTypeSchema {
   collectionName: 'band_types';
   info: {
@@ -569,6 +602,17 @@ export interface ApiBandTypeBandType extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ambiance: Schema.Attribute.String;
+    atmosphare: Schema.Attribute.String;
+    badge: Schema.Attribute.String;
+    band_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::band-category.band-category'
+    >;
+    best_for: Schema.Attribute.String;
+    cover_if_any: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -582,7 +626,10 @@ export interface ApiBandTypeBandType extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     page_link_if_any: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    signature_video_link: Schema.Attribute.String;
+    sound: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    typical_line_up: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1319,6 +1366,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::band-category.band-category': ApiBandCategoryBandCategory;
       'api::band-type.band-type': ApiBandTypeBandType;
       'api::category.category': ApiCategoryCategory;
       'api::corporate.corporate': ApiCorporateCorporate;
