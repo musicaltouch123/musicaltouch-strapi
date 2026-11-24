@@ -66,6 +66,12 @@
         "videos",
         "audios"
       ]
+    },
+    "youtube_videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::youtube-video.youtube-video",
+      "mappedBy": "band_type"
     }
   }
 }

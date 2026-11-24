@@ -588,6 +588,10 @@ export interface ApiBandCategoryBandCategory
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    youtube_videos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::youtube-video.youtube-video'
+    >;
   };
 }
 
@@ -633,6 +637,10 @@ export interface ApiBandTypeBandType extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    youtube_videos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::youtube-video.youtube-video'
+    >;
   };
 }
 
@@ -818,6 +826,10 @@ export interface ApiSingerSinger extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     youtube_link: Schema.Attribute.String;
+    youtube_video: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::youtube-video.youtube-video'
+    >;
   };
 }
 
@@ -849,6 +861,51 @@ export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiYoutubeVideoYoutubeVideo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'youtube_videos';
+  info: {
+    displayName: 'Youtube Video';
+    pluralName: 'youtube-videos';
+    singularName: 'youtube-video';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    band_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::band-category.band-category'
+    >;
+    band_type: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::band-type.band-type'
+    >;
+    cover_if_any: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::youtube-video.youtube-video'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    occasion: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    singer: Schema.Attribute.Relation<'oneToMany', 'api::singer.singer'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video_link: Schema.Attribute.String;
   };
 }
 
@@ -1374,6 +1431,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::singer.singer': ApiSingerSinger;
       'api::wedding.wedding': ApiWeddingWedding;
+      'api::youtube-video.youtube-video': ApiYoutubeVideoYoutubeVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

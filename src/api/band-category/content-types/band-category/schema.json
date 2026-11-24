@@ -19,6 +19,12 @@
       "relation": "oneToMany",
       "target": "api::band-type.band-type",
       "mappedBy": "band_category"
+    },
+    "youtube_videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::youtube-video.youtube-video",
+      "mappedBy": "band_category"
     }
   }
 }

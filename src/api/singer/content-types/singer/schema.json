@@ -150,6 +150,12 @@
       "type": "component",
       "component": "shared.youtube-with-cover",
       "repeatable": true
+    },
+    "youtube_video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::youtube-video.youtube-video",
+      "inversedBy": "singer"
     }
   }
 }
