@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_what_we_dos",
+  "info": {
+    "displayName": "What we do"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "text"
+    },
+    "tiles": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

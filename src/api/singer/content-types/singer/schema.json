@@ -1,0 +1,155 @@
+{
+  "kind": "collectionType",
+  "collectionName": "singers",
+  "info": {
+    "singularName": "singer",
+    "pluralName": "singers",
+    "displayName": "Singer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Exclusive Singers",
+        "Non-Exclusive Singers"
+      ]
+    },
+    "sub_category": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      },
+      "required": true,
+      "default": "null",
+      "enum": [
+        "Star Prestige",
+        "Gold",
+        "Silver",
+        "Bronze",
+        "null"
+      ]
+    },
+    "language": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      }
+    },
+    "insta_link": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      }
+    },
+    "youtube_link": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      }
+    },
+    "tiktok_link": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      }
+    },
+    "one_liner": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      }
+    },
+    "spotlight_image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "Exclusive Singers"
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "spotify_links": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    },
+    "in_concert_video": {
+      "type": "component",
+      "component": "shared.youtube-with-cover",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "corporates",
+  "info": {
+    "singularName": "corporate",
+    "pluralName": "corporates",
+    "displayName": "Corporate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.common-hero",
+      "repeatable": false
+    },
+    "experience_section": {
+      "type": "component",
+      "component": "shared.experience-section",
+      "repeatable": false
+    },
+    "what_we_do": {
+      "type": "component",
+      "component": "shared.what-we-do",
+      "repeatable": false
+    }
+  }
+}

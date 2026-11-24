@@ -262,6 +262,32 @@ export interface SharedTimelineSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedWhatWeDo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_what_we_dos';
+  info: {
+    displayName: 'What we do';
+  };
+  attributes: {
+    heading: Schema.Attribute.Text;
+    section_name: Schema.Attribute.String;
+    tiles: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      true
+    >;
+  };
+}
+
+export interface SharedYoutubeWithCover extends Struct.ComponentSchema {
+  collectionName: 'components_shared_youtube_with_covers';
+  info: {
+    displayName: 'Youtube with cover';
+  };
+  attributes: {
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
@@ -283,6 +309,8 @@ declare module '@strapi/strapi' {
       'shared.tiles-section': SharedTilesSection;
       'shared.timeline-item': SharedTimelineItem;
       'shared.timeline-section': SharedTimelineSection;
+      'shared.what-we-do': SharedWhatWeDo;
+      'shared.youtube-with-cover': SharedYoutubeWithCover;
     }
   }
 }

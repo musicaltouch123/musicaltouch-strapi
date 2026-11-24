@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_youtube_with_covers",
+  "info": {
+    "displayName": "Youtube with cover"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

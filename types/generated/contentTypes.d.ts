@@ -621,6 +621,39 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCorporateCorporate extends Struct.SingleTypeSchema {
+  collectionName: 'corporates';
+  info: {
+    displayName: 'Corporate';
+    pluralName: 'corporates';
+    singularName: 'corporate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    experience_section: Schema.Attribute.Component<
+      'shared.experience-section',
+      false
+    >;
+    hero: Schema.Attribute.Component<'shared.common-hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::corporate.corporate'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    what_we_do: Schema.Attribute.Component<'shared.what-we-do', false>;
+  };
+}
+
 export interface ApiCsrCsr extends Struct.SingleTypeSchema {
   collectionName: 'csrs';
   info: {
@@ -687,6 +720,57 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSingerSinger extends Struct.CollectionTypeSchema {
+  collectionName: 'singers';
+  info: {
+    displayName: 'Singer';
+    pluralName: 'singers';
+    singularName: 'singer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<
+      ['Exclusive Singers', 'Non-Exclusive Singers']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    in_concert_video: Schema.Attribute.Component<
+      'shared.youtube-with-cover',
+      true
+    >;
+    insta_link: Schema.Attribute.String;
+    language: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::singer.singer'
+    > &
+      Schema.Attribute.Private;
+    one_liner: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    spotify_links: Schema.Attribute.Component<'shared.text', true>;
+    spotlight_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    sub_category: Schema.Attribute.Enumeration<
+      ['Star Prestige', 'Gold', 'Silver', 'Bronze', 'null']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'null'>;
+    tiktok_link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtube_link: Schema.Attribute.String;
   };
 }
 
@@ -1237,8 +1321,10 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::band-type.band-type': ApiBandTypeBandType;
       'api::category.category': ApiCategoryCategory;
+      'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
       'api::global.global': ApiGlobalGlobal;
+      'api::singer.singer': ApiSingerSinger;
       'api::wedding.wedding': ApiWeddingWedding;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
