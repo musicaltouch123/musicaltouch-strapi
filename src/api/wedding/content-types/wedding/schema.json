@@ -30,6 +30,11 @@
       "type": "component",
       "component": "shared.timeline-section",
       "repeatable": false
+    },
+    "band_format_section": {
+      "type": "component",
+      "component": "shared.band-format-section",
+      "repeatable": false
     }
   }
 }

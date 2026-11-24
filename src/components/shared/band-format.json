@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_band_formats",
+  "info": {
+    "displayName": "Band Format"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "band_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::band-type.band-type"
+    }
+  },
+  "config": {}
+}

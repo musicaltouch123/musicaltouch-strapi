@@ -844,6 +844,10 @@ export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    band_format_section: Schema.Attribute.Component<
+      'shared.band-format-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

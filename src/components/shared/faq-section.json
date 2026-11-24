@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_faq_sections",
+  "info": {
+    "displayName": "Faq Section"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "show_question_text": {
+      "type": "string"
+    },
+    "hide_question_text": {
+      "type": "string"
+    },
+    "faqs": {
+      "type": "component",
+      "component": "shared.quote",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

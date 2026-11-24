@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_surprise_singer_scetions",
+  "info": {
+    "displayName": "Surprise singer scetion"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    },
+    "singers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::singer.singer"
+    }
+  },
+  "config": {}
+}

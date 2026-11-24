@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_rating_sections",
+  "info": {
+    "displayName": "Rating Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "review_numbers": {
+      "type": "string"
+    },
+    "review_text": {
+      "type": "string"
+    },
+    "performance_number": {
+      "type": "string"
+    },
+    "performance_text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_band_format_sections",
+  "info": {
+    "displayName": "Band Format Section"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "text"
+    },
+    "ambiance_band": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": true
+    },
+    "lineup_text": {
+      "type": "text"
+    },
+    "other_band": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": true
+    },
+    "additional_section": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

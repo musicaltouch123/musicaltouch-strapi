@@ -74,6 +74,40 @@ export interface SharedAboutOurStory extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBandFormat extends Struct.ComponentSchema {
+  collectionName: 'components_shared_band_formats';
+  info: {
+    displayName: 'Band Format';
+  };
+  attributes: {
+    band_types: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::band-type.band-type'
+    >;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBandFormatSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_band_format_sections';
+  info: {
+    displayName: 'Band Format Section';
+  };
+  attributes: {
+    additional_section: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      true
+    >;
+    ambiance_band: Schema.Attribute.Component<'shared.band-format', true>;
+    heading: Schema.Attribute.Text;
+    lineup_text: Schema.Attribute.Text;
+    other_band: Schema.Attribute.Component<'shared.band-format', true>;
+    section_name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCommonHero extends Struct.ComponentSchema {
   collectionName: 'components_shared_common_heroes';
   info: {
@@ -121,6 +155,21 @@ export interface SharedExperienceSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faq_sections';
+  info: {
+    displayName: 'Faq Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Component<'shared.quote', true>;
+    heading: Schema.Attribute.String;
+    hide_question_text: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+    show_question_text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeadingSubHeadingAndRepeatedLine
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_heading_sub_heading_and_repeated_lines';
@@ -154,6 +203,20 @@ export interface SharedQuote extends Struct.ComponentSchema {
   attributes: {
     main_text: Schema.Attribute.Text;
     sub_text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedRatingSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_rating_sections';
+  info: {
+    displayName: 'Rating Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.Text;
+    performance_number: Schema.Attribute.String;
+    performance_text: Schema.Attribute.String;
+    review_numbers: Schema.Attribute.String;
+    review_text: Schema.Attribute.String;
   };
 }
 
@@ -193,6 +256,21 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
   attributes: {
     files: Schema.Attribute.Media<'images', true>;
+  };
+}
+
+export interface SharedSurpriseSingerScetion extends Struct.ComponentSchema {
+  collectionName: 'components_shared_surprise_singer_scetions';
+  info: {
+    displayName: 'Surprise singer scetion';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+    singers: Schema.Attribute.Relation<'oneToMany', 'api::singer.singer'>;
   };
 }
 
@@ -296,15 +374,20 @@ declare module '@strapi/strapi' {
       'shared.about-and-csr-partners': SharedAboutAndCsrPartners;
       'shared.about-and-csr-second-component': SharedAboutAndCsrSecondComponent;
       'shared.about-our-story': SharedAboutOurStory;
+      'shared.band-format': SharedBandFormat;
+      'shared.band-format-section': SharedBandFormatSection;
       'shared.common-hero': SharedCommonHero;
       'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
       'shared.experience-section': SharedExperienceSection;
+      'shared.faq-section': SharedFaqSection;
       'shared.heading-sub-heading-and-repeated-line': SharedHeadingSubHeadingAndRepeatedLine;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
+      'shared.rating-section': SharedRatingSection;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.surprise-singer-scetion': SharedSurpriseSingerScetion;
       'shared.text': SharedText;
       'shared.tiles-section': SharedTilesSection;
       'shared.timeline-item': SharedTimelineItem;
