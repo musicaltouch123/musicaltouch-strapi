@@ -62,6 +62,16 @@
       "relation": "oneToMany",
       "target": "api::youtube-video.youtube-video",
       "mappedBy": "band_type"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
