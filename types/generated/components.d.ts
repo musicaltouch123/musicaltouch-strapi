@@ -195,6 +195,7 @@ export interface SharedHeadingSubHeadingAndRepeatedLine
   };
   attributes: {
     heading: Schema.Attribute.String;
+    lines: Schema.Attribute.Component<'shared.text', true>;
     sub_heading: Schema.Attribute.String;
   };
 }

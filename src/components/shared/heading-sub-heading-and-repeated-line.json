@@ -10,6 +10,11 @@
     },
     "sub_heading": {
       "type": "string"
+    },
+    "lines": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
     }
   },
   "config": {}
