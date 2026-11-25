@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_wedding_perk_sections",
+  "info": {
+    "displayName": "Wedding Perk Section"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

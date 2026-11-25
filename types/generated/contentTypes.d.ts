@@ -848,12 +848,19 @@ export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
       'shared.band-format-section',
       false
     >;
+    booking_process: Schema.Attribute.Component<
+      'shared.booking-process-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
     experience: Schema.Attribute.Component<'shared.experience-section', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
     hero: Schema.Attribute.Component<'shared.common-hero', false>;
     how_band_fits: Schema.Attribute.Component<'shared.tiles-section', false>;
+    image_slider: Schema.Attribute.Component<'shared.image-only', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -861,10 +868,16 @@ export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    rating_section: Schema.Attribute.Component<'shared.rating-section', false>;
+    singer: Schema.Attribute.Component<'shared.surprise-singer-scetion', false>;
     timeline_box: Schema.Attribute.Component<'shared.timeline-section', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    wedding_perks: Schema.Attribute.Component<
+      'shared.wedding-perk-section',
+      false
+    >;
   };
 }
 

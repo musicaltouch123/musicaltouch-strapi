@@ -19,6 +19,11 @@
     },
     "performance_text": {
       "type": "string"
+    },
+    "additional_items": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": true
     }
   },
   "config": {}

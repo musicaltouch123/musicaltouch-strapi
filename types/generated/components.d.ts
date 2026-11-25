@@ -108,6 +108,23 @@ export interface SharedBandFormatSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBookingProcessSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_booking_process_sections';
+  info: {
+    displayName: 'Booking Process Section';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+    steps: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      true
+    >;
+  };
+}
+
 export interface SharedCommonHero extends Struct.ComponentSchema {
   collectionName: 'components_shared_common_heroes';
   info: {
@@ -182,6 +199,16 @@ export interface SharedHeadingSubHeadingAndRepeatedLine
   };
 }
 
+export interface SharedImageOnly extends Struct.ComponentSchema {
+  collectionName: 'components_shared_image_onlies';
+  info: {
+    displayName: 'Image Only';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -212,6 +239,10 @@ export interface SharedRatingSection extends Struct.ComponentSchema {
     displayName: 'Rating Section';
   };
   attributes: {
+    additional_items: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      true
+    >;
     heading: Schema.Attribute.Text;
     performance_number: Schema.Attribute.String;
     performance_text: Schema.Attribute.String;
@@ -340,6 +371,20 @@ export interface SharedTimelineSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedWeddingPerkSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_wedding_perk_sections';
+  info: {
+    displayName: 'Wedding Perk Section';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedWhatWeDo extends Struct.ComponentSchema {
   collectionName: 'components_shared_what_we_dos';
   info: {
@@ -376,11 +421,13 @@ declare module '@strapi/strapi' {
       'shared.about-our-story': SharedAboutOurStory;
       'shared.band-format': SharedBandFormat;
       'shared.band-format-section': SharedBandFormatSection;
+      'shared.booking-process-section': SharedBookingProcessSection;
       'shared.common-hero': SharedCommonHero;
       'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
       'shared.experience-section': SharedExperienceSection;
       'shared.faq-section': SharedFaqSection;
       'shared.heading-sub-heading-and-repeated-line': SharedHeadingSubHeadingAndRepeatedLine;
+      'shared.image-only': SharedImageOnly;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rating-section': SharedRatingSection;
@@ -392,6 +439,7 @@ declare module '@strapi/strapi' {
       'shared.tiles-section': SharedTilesSection;
       'shared.timeline-item': SharedTimelineItem;
       'shared.timeline-section': SharedTimelineSection;
+      'shared.wedding-perk-section': SharedWeddingPerkSection;
       'shared.what-we-do': SharedWhatWeDo;
       'shared.youtube-with-cover': SharedYoutubeWithCover;
     }

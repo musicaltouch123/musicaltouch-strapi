@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_image_onlies",
+  "info": {
+    "displayName": "Image Only"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

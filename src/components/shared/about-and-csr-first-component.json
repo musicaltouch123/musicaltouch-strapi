@@ -8,9 +8,6 @@
     "heading": {
       "type": "text"
     },
-    "description": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": true,
@@ -20,6 +17,9 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "text"
     }
   },
   "config": {}

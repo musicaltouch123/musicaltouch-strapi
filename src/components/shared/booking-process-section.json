@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_booking_process_sections",
+  "info": {
+    "displayName": "Booking Process Section"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
