@@ -687,14 +687,27 @@ export interface ApiCorporateCorporate extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    add_ons: Schema.Attribute.Component<'shared.what-we-do', false>;
+    add_ons_note: Schema.Attribute.Component<'shared.quote', false>;
+    band_format_section: Schema.Attribute.Component<
+      'shared.band-format-section',
+      false
+    >;
+    booking_process: Schema.Attribute.Component<
+      'shared.booking-process-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
     experience_section: Schema.Attribute.Component<
       'shared.experience-section',
       false
     >;
     hero: Schema.Attribute.Component<'shared.common-hero', false>;
+    hero_highlights: Schema.Attribute.Component<'shared.text', true>;
+    image_slider: Schema.Attribute.Component<'shared.image-only', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -702,10 +715,13 @@ export interface ApiCorporateCorporate extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    rating_section: Schema.Attribute.Component<'shared.rating-section', false>;
+    singer: Schema.Attribute.Component<'shared.surprise-singer-scetion', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     what_we_do: Schema.Attribute.Component<'shared.what-we-do', false>;
+    what_we_offer: Schema.Attribute.Component<'shared.what-we-do', false>;
   };
 }
 

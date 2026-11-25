@@ -16,6 +16,11 @@
       "component": "shared.common-hero",
       "repeatable": false
     },
+    "hero_highlights": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    },
     "experience_section": {
       "type": "component",
       "component": "shared.experience-section",
@@ -24,6 +29,51 @@
     "what_we_do": {
       "type": "component",
       "component": "shared.what-we-do",
+      "repeatable": false
+    },
+    "what_we_offer": {
+      "type": "component",
+      "component": "shared.what-we-do",
+      "repeatable": false
+    },
+    "add_ons": {
+      "type": "component",
+      "component": "shared.what-we-do",
+      "repeatable": false
+    },
+    "add_ons_note": {
+      "type": "component",
+      "component": "shared.quote",
+      "repeatable": false
+    },
+    "band_format_section": {
+      "type": "component",
+      "component": "shared.band-format-section",
+      "repeatable": false
+    },
+    "singer": {
+      "type": "component",
+      "component": "shared.surprise-singer-scetion",
+      "repeatable": false
+    },
+    "rating_section": {
+      "type": "component",
+      "component": "shared.rating-section",
+      "repeatable": false
+    },
+    "booking_process": {
+      "type": "component",
+      "component": "shared.booking-process-section",
+      "repeatable": false
+    },
+    "image_slider": {
+      "type": "component",
+      "component": "shared.image-only",
+      "repeatable": true
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
       "repeatable": false
     }
   }
