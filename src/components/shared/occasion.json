@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_occasions",
+  "info": {
+    "displayName": "Occasion"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tiles": {
+      "type": "component",
+      "component": "shared.tiles-with-link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

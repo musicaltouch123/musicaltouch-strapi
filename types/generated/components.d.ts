@@ -196,6 +196,18 @@ export interface SharedHeadingSubHeadingAndRepeatedLine
   };
 }
 
+export interface SharedHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    heading: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedImageOnly extends Struct.ComponentSchema {
   collectionName: 'components_shared_image_onlies';
   info: {
@@ -215,6 +227,19 @@ export interface SharedMedia extends Struct.ComponentSchema {
   attributes: {
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SharedOccasion extends Struct.ComponentSchema {
+  collectionName: 'components_shared_occasions';
+  info: {
+    displayName: 'Occasion';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+    tiles: Schema.Attribute.Component<'shared.tiles-with-link', false>;
   };
 }
 
@@ -330,6 +355,18 @@ export interface SharedTilesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTilesWithLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tiles_with_links';
+  info: {
+    displayName: 'Tiles with link';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTimelineItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_timeline_items';
   info: {
@@ -424,8 +461,10 @@ declare module '@strapi/strapi' {
       'shared.experience-section': SharedExperienceSection;
       'shared.faq-section': SharedFaqSection;
       'shared.heading-sub-heading-and-repeated-line': SharedHeadingSubHeadingAndRepeatedLine;
+      'shared.hero': SharedHero;
       'shared.image-only': SharedImageOnly;
       'shared.media': SharedMedia;
+      'shared.occasion': SharedOccasion;
       'shared.quote': SharedQuote;
       'shared.rating-section': SharedRatingSection;
       'shared.rich-text': SharedRichText;
@@ -434,6 +473,7 @@ declare module '@strapi/strapi' {
       'shared.surprise-singer-scetion': SharedSurpriseSingerScetion;
       'shared.text': SharedText;
       'shared.tiles-section': SharedTilesSection;
+      'shared.tiles-with-link': SharedTilesWithLink;
       'shared.timeline-item': SharedTimelineItem;
       'shared.timeline-section': SharedTimelineSection;
       'shared.wedding-perk-section': SharedWeddingPerkSection;

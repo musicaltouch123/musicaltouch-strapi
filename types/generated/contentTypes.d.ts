@@ -794,6 +794,36 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    occasion: Schema.Attribute.Component<'shared.occasion', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    rating_section: Schema.Attribute.Component<'shared.rating-section', false>;
+    slider: Schema.Attribute.Component<'shared.slider', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Component<'shared.media', false>;
+  };
+}
+
 export interface ApiPrivatePartyPrivateParty extends Struct.SingleTypeSchema {
   collectionName: 'private_parties';
   info: {
@@ -1509,6 +1539,7 @@ declare module '@strapi/strapi' {
       'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
       'api::global.global': ApiGlobalGlobal;
+      'api::home.home': ApiHomeHome;
       'api::private-party.private-party': ApiPrivatePartyPrivateParty;
       'api::singer.singer': ApiSingerSinger;
       'api::wedding.wedding': ApiWeddingWedding;
