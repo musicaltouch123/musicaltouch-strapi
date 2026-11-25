@@ -794,6 +794,53 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPrivatePartyPrivateParty extends Struct.SingleTypeSchema {
+  collectionName: 'private_parties';
+  info: {
+    displayName: 'Private Party';
+    pluralName: 'private-parties';
+    singularName: 'private-party';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    band_format_section: Schema.Attribute.Component<
+      'shared.band-format-section',
+      false
+    >;
+    booking_process: Schema.Attribute.Component<
+      'shared.booking-process-section',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    experience_section: Schema.Attribute.Component<
+      'shared.experience-section',
+      false
+    >;
+    hero: Schema.Attribute.Component<'shared.common-hero', false>;
+    image_slider: Schema.Attribute.Component<'shared.image-only', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::private-party.private-party'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    rating_section: Schema.Attribute.Component<'shared.rating-section', false>;
+    services_note: Schema.Attribute.Component<'shared.quote', false>;
+    singer: Schema.Attribute.Component<'shared.surprise-singer-scetion', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    what_we_do: Schema.Attribute.Component<'shared.what-we-do', false>;
+    what_we_offer: Schema.Attribute.Component<'shared.what-we-do', false>;
+  };
+}
+
 export interface ApiSingerSinger extends Struct.CollectionTypeSchema {
   collectionName: 'singers';
   info: {
@@ -1462,6 +1509,7 @@ declare module '@strapi/strapi' {
       'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
       'api::global.global': ApiGlobalGlobal;
+      'api::private-party.private-party': ApiPrivatePartyPrivateParty;
       'api::singer.singer': ApiSingerSinger;
       'api::wedding.wedding': ApiWeddingWedding;
       'api::youtube-video.youtube-video': ApiYoutubeVideoYoutubeVideo;
