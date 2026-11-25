@@ -23,11 +23,6 @@
       "type": "component",
       "component": "shared.band-format",
       "repeatable": true
-    },
-    "additional_section": {
-      "type": "component",
-      "component": "shared.about-and-csr-first-component",
-      "repeatable": true
     }
   },
   "config": {}

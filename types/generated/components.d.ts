@@ -96,10 +96,6 @@ export interface SharedBandFormatSection extends Struct.ComponentSchema {
     displayName: 'Band Format Section';
   };
   attributes: {
-    additional_section: Schema.Attribute.Component<
-      'shared.about-and-csr-first-component',
-      true
-    >;
     ambiance_band: Schema.Attribute.Component<'shared.band-format', true>;
     heading: Schema.Attribute.Text;
     lineup_text: Schema.Attribute.Text;
