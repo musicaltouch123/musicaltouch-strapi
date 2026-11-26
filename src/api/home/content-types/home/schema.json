@@ -31,14 +31,14 @@
       "component": "shared.rating-section",
       "repeatable": false
     },
-    "video": {
-      "type": "component",
-      "component": "shared.media",
-      "repeatable": false
-    },
     "enquiry": {
       "type": "component",
       "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    },
+    "video": {
+      "type": "component",
+      "component": "shared.youtube-with-cover",
       "repeatable": false
     }
   }
