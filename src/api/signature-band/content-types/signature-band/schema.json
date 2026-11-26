@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "signature_bands",
+  "info": {
+    "singularName": "signature-band",
+    "pluralName": "signature-bands",
+    "displayName": "Signature Band"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": false
+    },
+    "band_types": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": true
+    },
+    "beyond_section": {
+      "type": "component",
+      "component": "shared.common-hero",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}

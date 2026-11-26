@@ -871,6 +871,40 @@ export interface ApiPrivatePartyPrivateParty extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSignatureBandSignatureBand extends Struct.SingleTypeSchema {
+  collectionName: 'signature_bands';
+  info: {
+    displayName: 'Signature Band';
+    pluralName: 'signature-bands';
+    singularName: 'signature-band';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    band_types: Schema.Attribute.Component<'shared.band-format', true>;
+    beyond_section: Schema.Attribute.Component<'shared.common-hero', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::signature-band.signature-band'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSingerSinger extends Struct.CollectionTypeSchema {
   collectionName: 'singers';
   info: {
@@ -1546,6 +1580,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::private-party.private-party': ApiPrivatePartyPrivateParty;
+      'api::signature-band.signature-band': ApiSignatureBandSignatureBand;
       'api::singer.singer': ApiSingerSinger;
       'api::wedding.wedding': ApiWeddingWedding;
       'api::youtube-video.youtube-video': ApiYoutubeVideoYoutubeVideo;
