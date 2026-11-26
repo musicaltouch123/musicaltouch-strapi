@@ -809,6 +809,10 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    exclusive_singer_section: Schema.Attribute.Component<
+      'shared.wedding-perk-section',
+      false
+    >;
     hero: Schema.Attribute.Component<'shared.hero', false>;
     lineups_images: Schema.Attribute.Component<'shared.image-only', true>;
     lineups_text: Schema.Attribute.Component<
@@ -821,6 +825,10 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     occasion: Schema.Attribute.Component<'shared.occasion', false>;
     publishedAt: Schema.Attribute.DateTime;
     rating_section: Schema.Attribute.Component<'shared.rating-section', false>;
+    singer_list: Schema.Attribute.Component<
+      'shared.singers-with-category',
+      true
+    >;
     slider: Schema.Attribute.Component<'shared.slider', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_singers_with_categories",
+  "info": {
+    "displayName": "Singers with category"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "singers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::singer.singer"
+    }
+  },
+  "config": {}
+}

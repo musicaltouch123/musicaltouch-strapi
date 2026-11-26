@@ -50,6 +50,16 @@
       "type": "component",
       "component": "shared.image-only",
       "repeatable": true
+    },
+    "exclusive_singer_section": {
+      "type": "component",
+      "component": "shared.wedding-perk-section",
+      "repeatable": false
+    },
+    "singer_list": {
+      "type": "component",
+      "component": "shared.singers-with-category",
+      "repeatable": true
     }
   }
 }

@@ -300,6 +300,17 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSingersWithCategory extends Struct.ComponentSchema {
+  collectionName: 'components_shared_singers_with_categories';
+  info: {
+    displayName: 'Singers with category';
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    singers: Schema.Attribute.Relation<'oneToMany', 'api::singer.singer'>;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -469,6 +480,7 @@ declare module '@strapi/strapi' {
       'shared.rating-section': SharedRatingSection;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.singers-with-category': SharedSingersWithCategory;
       'shared.slider': SharedSlider;
       'shared.surprise-singer-scetion': SharedSurpriseSingerScetion;
       'shared.text': SharedText;
