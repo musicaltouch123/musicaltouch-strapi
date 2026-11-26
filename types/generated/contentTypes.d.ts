@@ -810,6 +810,11 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
     hero: Schema.Attribute.Component<'shared.hero', false>;
+    lineups_images: Schema.Attribute.Component<'shared.image-only', true>;
+    lineups_text: Schema.Attribute.Component<
+      'shared.wedding-perk-section',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
