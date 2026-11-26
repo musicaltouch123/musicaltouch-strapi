@@ -467,6 +467,11 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       'shared.about-and-csr-partners',
       false
     >;
+    line_ups_image: Schema.Attribute.Component<'shared.image-only', true>;
+    line_ups_text: Schema.Attribute.Component<
+      'shared.wedding-perk-section',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
