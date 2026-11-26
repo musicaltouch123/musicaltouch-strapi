@@ -905,6 +905,7 @@ export interface ApiSignatureBandSignatureBand extends Struct.SingleTypeSchema {
       'shared.about-and-csr-first-component',
       false
     >;
+    image_slider: Schema.Attribute.Component<'shared.slider', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

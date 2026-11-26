@@ -30,6 +30,11 @@
       "type": "component",
       "component": "shared.about-and-csr-enquiry",
       "repeatable": false
+    },
+    "image_slider": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": false
     }
   }
 }
