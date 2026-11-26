@@ -467,11 +467,6 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       'shared.about-and-csr-partners',
       false
     >;
-    line_ups_image: Schema.Attribute.Component<'shared.image-only', true>;
-    line_ups_text: Schema.Attribute.Component<
-      'shared.wedding-perk-section',
-      false
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
@@ -959,6 +954,11 @@ export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
     hero: Schema.Attribute.Component<'shared.common-hero', false>;
     how_band_fits: Schema.Attribute.Component<'shared.tiles-section', false>;
     image_slider: Schema.Attribute.Component<'shared.image-only', true>;
+    lineup_images: Schema.Attribute.Component<'shared.image-only', true>;
+    lineup_text: Schema.Attribute.Component<
+      'shared.wedding-perk-section',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
