@@ -239,7 +239,7 @@ export interface SharedOccasion extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     section_name: Schema.Attribute.String;
-    tiles: Schema.Attribute.Component<'shared.tiles-with-link', false>;
+    tiles: Schema.Attribute.Component<'shared.tiles-with-link', true>;
   };
 }
 

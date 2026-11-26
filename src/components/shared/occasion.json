@@ -17,7 +17,7 @@
     "tiles": {
       "type": "component",
       "component": "shared.tiles-with-link",
-      "repeatable": false
+      "repeatable": true
     }
   },
   "config": {}
