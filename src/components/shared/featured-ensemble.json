@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_featured_ensembles",
+  "info": {
+    "displayName": "Featured ensemble"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "chips": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

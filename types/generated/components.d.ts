@@ -183,6 +183,22 @@ export interface SharedFaqSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFeaturedEnsemble extends Struct.ComponentSchema {
+  collectionName: 'components_shared_featured_ensembles';
+  info: {
+    displayName: 'Featured ensemble';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    chips: Schema.Attribute.Component<'shared.text', true>;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    section_name: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeadingSubHeadingAndRepeatedLine
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_heading_sub_heading_and_repeated_lines';
@@ -471,6 +487,7 @@ declare module '@strapi/strapi' {
       'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
       'shared.experience-section': SharedExperienceSection;
       'shared.faq-section': SharedFaqSection;
+      'shared.featured-ensemble': SharedFeaturedEnsemble;
       'shared.heading-sub-heading-and-repeated-line': SharedHeadingSubHeadingAndRepeatedLine;
       'shared.hero': SharedHero;
       'shared.image-only': SharedImageOnly;

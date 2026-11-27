@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "specialty_ensembles",
+  "info": {
+    "singularName": "specialty-ensemble",
+    "pluralName": "specialty-ensembles",
+    "displayName": "Specialty Ensemble"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": false
+    },
+    "featured_ensemble": {
+      "type": "component",
+      "component": "shared.featured-ensemble",
+      "repeatable": false
+    },
+    "ensemble_section": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": false
+    },
+    "beyond_section": {
+      "type": "component",
+      "component": "shared.common-hero",
+      "repeatable": false
+    },
+    "image_slider": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}
