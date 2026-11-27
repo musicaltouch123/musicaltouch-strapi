@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_page_banners",
+  "info": { "displayName": "Page banner" },
+  "options": {},
+  "attributes": {
+    "heading": { "type": "string" },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] }
+  },
+  "config": {}
+}

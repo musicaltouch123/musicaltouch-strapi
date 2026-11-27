@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "string_quartets",
+  "info": {
+    "singularName": "string-quartet",
+    "pluralName": "string-quartets",
+    "displayName": "String Quartet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.page-banner",
+      "repeatable": false
+    },
+    "band_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::band-type.band-type"
+    },
+    "repertoire": {
+      "type": "component",
+      "component": "shared.repertoire-section",
+      "repeatable": false
+    },
+    "story_section": {
+      "type": "component",
+      "component": "shared.story-banner",
+      "repeatable": false
+    },
+    "image_slider": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": false
+    },
+    "other_ensembles": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}

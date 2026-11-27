@@ -1054,6 +1054,43 @@ export interface ApiSpecialtyEnsembleSpecialtyEnsemble
   };
 }
 
+export interface ApiStringQuartetStringQuartet extends Struct.SingleTypeSchema {
+  collectionName: 'string_quartets';
+  info: {
+    displayName: 'String Quartet';
+    pluralName: 'string-quartets';
+    singularName: 'string-quartet';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    band_type: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::band-type.band-type'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<'shared.page-banner', false>;
+    image_slider: Schema.Attribute.Component<'shared.slider', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::string-quartet.string-quartet'
+    > &
+      Schema.Attribute.Private;
+    other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    repertoire: Schema.Attribute.Component<'shared.repertoire-section', false>;
+    story_section: Schema.Attribute.Component<'shared.story-banner', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
   collectionName: 'weddings';
   info: {
@@ -1678,6 +1715,7 @@ declare module '@strapi/strapi' {
       'api::signature-band.signature-band': ApiSignatureBandSignatureBand;
       'api::singer.singer': ApiSingerSinger;
       'api::specialty-ensemble.specialty-ensemble': ApiSpecialtyEnsembleSpecialtyEnsemble;
+      'api::string-quartet.string-quartet': ApiStringQuartetStringQuartet;
       'api::wedding.wedding': ApiWeddingWedding;
       'api::youtube-video.youtube-video': ApiYoutubeVideoYoutubeVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;

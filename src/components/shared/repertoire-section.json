@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_repertoire_sections",
+  "info": { "displayName": "Repertoire section" },
+  "options": {},
+  "attributes": {
+    "heading": { "type": "string" },
+    "indented_heading": { "type": "string" },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "top_line": { "type": "string" },
+    "middle_line": { "type": "string" },
+    "bottom_line": { "type": "string" }
+  },
+  "config": {}
+}

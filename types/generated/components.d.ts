@@ -293,6 +293,17 @@ export interface SharedOccasion extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPageBanner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_banners';
+  info: {
+    displayName: 'Page banner';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -320,6 +331,21 @@ export interface SharedRatingSection extends Struct.ComponentSchema {
     performance_text: Schema.Attribute.String;
     review_numbers: Schema.Attribute.String;
     review_text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedRepertoireSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_repertoire_sections';
+  info: {
+    displayName: 'Repertoire section';
+  };
+  attributes: {
+    bottom_line: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    indented_heading: Schema.Attribute.String;
+    middle_line: Schema.Attribute.String;
+    top_line: Schema.Attribute.String;
   };
 }
 
@@ -381,6 +407,21 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
   attributes: {
     files: Schema.Attribute.Media<'images', true>;
+  };
+}
+
+export interface SharedStoryBanner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_story_banners';
+  info: {
+    displayName: 'Story banner';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    section_name: Schema.Attribute.String;
   };
 }
 
@@ -567,13 +608,16 @@ declare module '@strapi/strapi' {
       'shared.image-only': SharedImageOnly;
       'shared.media': SharedMedia;
       'shared.occasion': SharedOccasion;
+      'shared.page-banner': SharedPageBanner;
       'shared.quote': SharedQuote;
       'shared.rating-section': SharedRatingSection;
+      'shared.repertoire-section': SharedRepertoireSection;
       'shared.rich-text': SharedRichText;
       'shared.section-heading': SharedSectionHeading;
       'shared.seo': SharedSeo;
       'shared.singers-with-category': SharedSingersWithCategory;
       'shared.slider': SharedSlider;
+      'shared.story-banner': SharedStoryBanner;
       'shared.surprise-singer-scetion': SharedSurpriseSingerScetion;
       'shared.testimonial': SharedTestimonial;
       'shared.testimonial-section': SharedTestimonialSection;
