@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "worship_bands",
+  "info": {
+    "singularName": "worship-band",
+    "pluralName": "worship-bands",
+    "displayName": "Worship Band"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": false
+    },
+    "overview": {
+      "type": "component",
+      "component": "shared.band-overview",
+      "repeatable": false
+    },
+    "video_section": {
+      "type": "component",
+      "component": "shared.video-section",
+      "repeatable": false
+    },
+    "after_videos_note": {
+      "type": "component",
+      "component": "shared.centred-note",
+      "repeatable": false
+    },
+    "other_ensembles": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}

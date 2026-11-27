@@ -762,6 +762,44 @@ export interface ApiCsrCsr extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCustomInstrumentalCustomInstrumental
+  extends Struct.SingleTypeSchema {
+  collectionName: 'custom_instrumentals';
+  info: {
+    displayName: 'Custom Instrumentals';
+    pluralName: 'custom-instrumentals';
+    singularName: 'custom-instrumental';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    after_videos_note: Schema.Attribute.Component<'shared.centred-note', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      false
+    >;
+    intro_note: Schema.Attribute.Component<'shared.centred-note', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::custom-instrumental.custom-instrumental'
+    > &
+      Schema.Attribute.Private;
+    other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    overview: Schema.Attribute.Component<'shared.band-overview', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video_section: Schema.Attribute.Component<'shared.video-section', false>;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -860,6 +898,42 @@ export interface ApiJazzBandJazzBand extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::jazz-band.jazz-band'
+    > &
+      Schema.Attribute.Private;
+    other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    overview: Schema.Attribute.Component<'shared.band-overview', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video_section: Schema.Attribute.Component<'shared.video-section', false>;
+  };
+}
+
+export interface ApiPercussionEnsemblePercussionEnsemble
+  extends Struct.SingleTypeSchema {
+  collectionName: 'percussion_ensembles';
+  info: {
+    displayName: 'Percussion Ensemble';
+    pluralName: 'percussion-ensembles';
+    singularName: 'percussion-ensemble';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::percussion-ensemble.percussion-ensemble'
     > &
       Schema.Attribute.Private;
     other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
@@ -1173,6 +1247,42 @@ export interface ApiWeddingWedding extends Struct.SingleTypeSchema {
       'shared.wedding-perk-section',
       false
     >;
+  };
+}
+
+export interface ApiWorshipBandWorshipBand extends Struct.SingleTypeSchema {
+  collectionName: 'worship_bands';
+  info: {
+    displayName: 'Worship Band';
+    pluralName: 'worship-bands';
+    singularName: 'worship-band';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    after_videos_note: Schema.Attribute.Component<'shared.centred-note', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::worship-band.worship-band'
+    > &
+      Schema.Attribute.Private;
+    other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    overview: Schema.Attribute.Component<'shared.band-overview', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video_section: Schema.Attribute.Component<'shared.video-section', false>;
   };
 }
 
@@ -1740,9 +1850,11 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
+      'api::custom-instrumental.custom-instrumental': ApiCustomInstrumentalCustomInstrumental;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::jazz-band.jazz-band': ApiJazzBandJazzBand;
+      'api::percussion-ensemble.percussion-ensemble': ApiPercussionEnsemblePercussionEnsemble;
       'api::pop-orchestra.pop-orchestra': ApiPopOrchestraPopOrchestra;
       'api::private-party.private-party': ApiPrivatePartyPrivateParty;
       'api::signature-band.signature-band': ApiSignatureBandSignatureBand;
@@ -1750,6 +1862,7 @@ declare module '@strapi/strapi' {
       'api::specialty-ensemble.specialty-ensemble': ApiSpecialtyEnsembleSpecialtyEnsemble;
       'api::string-quartet.string-quartet': ApiStringQuartetStringQuartet;
       'api::wedding.wedding': ApiWeddingWedding;
+      'api::worship-band.worship-band': ApiWorshipBandWorshipBand;
       'api::youtube-video.youtube-video': ApiYoutubeVideoYoutubeVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

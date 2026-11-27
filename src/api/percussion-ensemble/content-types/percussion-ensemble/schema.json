@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "percussion_ensembles",
+  "info": {
+    "singularName": "percussion-ensemble",
+    "pluralName": "percussion-ensembles",
+    "displayName": "Percussion Ensemble"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.about-and-csr-first-component",
+      "repeatable": false
+    },
+    "overview": {
+      "type": "component",
+      "component": "shared.band-overview",
+      "repeatable": false
+    },
+    "video_section": {
+      "type": "component",
+      "component": "shared.video-section",
+      "repeatable": false
+    },
+    "other_ensembles": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}

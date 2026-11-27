@@ -152,6 +152,21 @@ export interface SharedBookingProcessSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCentredNote extends Struct.ComponentSchema {
+  collectionName: 'components_shared_centred_notes';
+  info: {
+    displayName: 'Centred note';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    link_text: Schema.Attribute.String;
+    link_url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCommonHero extends Struct.ComponentSchema {
   collectionName: 'components_shared_common_heroes';
   info: {
@@ -655,6 +670,7 @@ declare module '@strapi/strapi' {
       'shared.band-overview': SharedBandOverview;
       'shared.band-section': SharedBandSection;
       'shared.booking-process-section': SharedBookingProcessSection;
+      'shared.centred-note': SharedCentredNote;
       'shared.common-hero': SharedCommonHero;
       'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
       'shared.ensemble-format': SharedEnsembleFormat;
