@@ -104,6 +104,37 @@ export interface SharedBandFormatSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBandOverview extends Struct.ComponentSchema {
+  collectionName: 'components_shared_band_overviews';
+  info: {
+    displayName: 'Band overview';
+  };
+  attributes: {
+    band_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::band-type.band-type'
+    >;
+    button_text: Schema.Attribute.String;
+    heading: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SharedBandSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_band_sections';
+  info: {
+    displayName: 'Band section';
+  };
+  attributes: {
+    band_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::band-type.band-type'
+    >;
+    heading: Schema.Attribute.Text;
+    section_name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBookingProcessSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_booking_process_sections';
   info: {
@@ -545,6 +576,32 @@ export interface SharedTimelineSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVideoGroup extends Struct.ComponentSchema {
+  collectionName: 'components_shared_video_groups';
+  info: {
+    displayName: 'Video group';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    youtube_videos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::youtube-video.youtube-video'
+    >;
+  };
+}
+
+export interface SharedVideoSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_video_sections';
+  info: {
+    displayName: 'Video section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    groups: Schema.Attribute.Component<'shared.video-group', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface SharedWeddingPerkSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_wedding_perk_sections';
   info: {
@@ -595,6 +652,8 @@ declare module '@strapi/strapi' {
       'shared.about-our-story': SharedAboutOurStory;
       'shared.band-format': SharedBandFormat;
       'shared.band-format-section': SharedBandFormatSection;
+      'shared.band-overview': SharedBandOverview;
+      'shared.band-section': SharedBandSection;
       'shared.booking-process-section': SharedBookingProcessSection;
       'shared.common-hero': SharedCommonHero;
       'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
@@ -626,6 +685,8 @@ declare module '@strapi/strapi' {
       'shared.tiles-with-link': SharedTilesWithLink;
       'shared.timeline-item': SharedTimelineItem;
       'shared.timeline-section': SharedTimelineSection;
+      'shared.video-group': SharedVideoGroup;
+      'shared.video-section': SharedVideoSection;
       'shared.wedding-perk-section': SharedWeddingPerkSection;
       'shared.what-we-do': SharedWhatWeDo;
       'shared.youtube-with-cover': SharedYoutubeWithCover;

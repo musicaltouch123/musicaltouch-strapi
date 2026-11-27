@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_video_groups",
+  "info": { "displayName": "Video group" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "youtube_videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::youtube-video.youtube-video"
+    }
+  },
+  "config": {}
+}

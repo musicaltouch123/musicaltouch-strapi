@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_band_sections",
+  "info": { "displayName": "Band section" },
+  "options": {},
+  "attributes": {
+    "section_name": { "type": "string" },
+    "heading": { "type": "text" },
+    "band_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::band-type.band-type"
+    }
+  },
+  "config": {}
+}

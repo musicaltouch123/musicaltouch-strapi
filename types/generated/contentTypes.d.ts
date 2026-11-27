@@ -837,6 +837,41 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiJazzBandJazzBand extends Struct.SingleTypeSchema {
+  collectionName: 'jazz_bands';
+  info: {
+    displayName: 'Jazz Band';
+    pluralName: 'jazz-bands';
+    singularName: 'jazz-band';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<
+      'shared.about-and-csr-first-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::jazz-band.jazz-band'
+    > &
+      Schema.Attribute.Private;
+    other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    overview: Schema.Attribute.Component<'shared.band-overview', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video_section: Schema.Attribute.Component<'shared.video-section', false>;
+  };
+}
+
 export interface ApiPopOrchestraPopOrchestra extends Struct.SingleTypeSchema {
   collectionName: 'pop_orchestras';
   info: {
@@ -1065,10 +1100,6 @@ export interface ApiStringQuartetStringQuartet extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    band_type: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::band-type.band-type'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1082,6 +1113,7 @@ export interface ApiStringQuartetStringQuartet extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    overview: Schema.Attribute.Component<'shared.band-section', false>;
     publishedAt: Schema.Attribute.DateTime;
     repertoire: Schema.Attribute.Component<'shared.repertoire-section', false>;
     story_section: Schema.Attribute.Component<'shared.story-banner', false>;
@@ -1710,6 +1742,7 @@ declare module '@strapi/strapi' {
       'api::csr.csr': ApiCsrCsr;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::jazz-band.jazz-band': ApiJazzBandJazzBand;
       'api::pop-orchestra.pop-orchestra': ApiPopOrchestraPopOrchestra;
       'api::private-party.private-party': ApiPrivatePartyPrivateParty;
       'api::signature-band.signature-band': ApiSignatureBandSignatureBand;

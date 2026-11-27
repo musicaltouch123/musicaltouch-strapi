@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_band_overviews",
+  "info": { "displayName": "Band overview" },
+  "options": {},
+  "attributes": {
+    "heading": { "type": "text" },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "button_text": { "type": "string" },
+    "band_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::band-type.band-type"
+    }
+  },
+  "config": {}
+}

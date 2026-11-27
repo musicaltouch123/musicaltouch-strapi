@@ -16,10 +16,10 @@
       "component": "shared.page-banner",
       "repeatable": false
     },
-    "band_type": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::band-type.band-type"
+    "overview": {
+      "type": "component",
+      "component": "shared.band-section",
+      "repeatable": false
     },
     "repertoire": {
       "type": "component",
