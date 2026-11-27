@@ -16,6 +16,11 @@
       "component": "shared.about-and-csr-first-component",
       "repeatable": false
     },
+    "intro_section": {
+      "type": "component",
+      "component": "shared.section-heading",
+      "repeatable": false
+    },
     "featured_ensemble": {
       "type": "component",
       "component": "shared.featured-ensemble",

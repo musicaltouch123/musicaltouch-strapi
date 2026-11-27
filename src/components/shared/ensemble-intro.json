@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_shared_ensemble_intros",
+  "info": {
+    "displayName": "Ensemble intro"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stat_label": {
+      "type": "string"
+    },
+    "stat_value": {
+      "type": "string"
+    },
+    "stat_unit": {
+      "type": "string"
+    },
+    "stats_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "section_name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

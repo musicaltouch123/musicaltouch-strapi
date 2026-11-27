@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_section_headings",
+  "info": {
+    "displayName": "Section heading"
+  },
+  "options": {},
+  "attributes": {
+    "section_name": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

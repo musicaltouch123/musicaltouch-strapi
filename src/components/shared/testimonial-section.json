@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_testimonial_sections",
+  "info": {
+    "displayName": "Testimonial section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    },
+    "decor": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

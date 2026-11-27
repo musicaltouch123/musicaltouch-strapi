@@ -837,6 +837,45 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPopOrchestraPopOrchestra extends Struct.SingleTypeSchema {
+  collectionName: 'pop_orchestras';
+  info: {
+    displayName: 'Pop Orchestra';
+    pluralName: 'pop-orchestras';
+    singularName: 'pop-orchestra';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    formats: Schema.Attribute.Component<'shared.ensemble-format', true>;
+    grandeur_image: Schema.Attribute.Component<'shared.slider', false>;
+    grandeur_strip: Schema.Attribute.Component<'shared.text', false>;
+    hero: Schema.Attribute.Component<'shared.ensemble-intro', false>;
+    image_slider: Schema.Attribute.Component<'shared.slider', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pop-orchestra.pop-orchestra'
+    > &
+      Schema.Attribute.Private;
+    other_ensembles: Schema.Attribute.Component<'shared.band-format', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    singer: Schema.Attribute.Component<'shared.surprise-singer-scetion', false>;
+    testimonials: Schema.Attribute.Component<
+      'shared.testimonial-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrivatePartyPrivateParty extends Struct.SingleTypeSchema {
   collectionName: 'private_parties';
   info: {
@@ -1001,6 +1040,7 @@ export interface ApiSpecialtyEnsembleSpecialtyEnsemble
       false
     >;
     image_slider: Schema.Attribute.Component<'shared.slider', false>;
+    intro_section: Schema.Attribute.Component<'shared.section-heading', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1633,6 +1673,7 @@ declare module '@strapi/strapi' {
       'api::csr.csr': ApiCsrCsr;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::pop-orchestra.pop-orchestra': ApiPopOrchestraPopOrchestra;
       'api::private-party.private-party': ApiPrivatePartyPrivateParty;
       'api::signature-band.signature-band': ApiSignatureBandSignatureBand;
       'api::singer.singer': ApiSingerSinger;

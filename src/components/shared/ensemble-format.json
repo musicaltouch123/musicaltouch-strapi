@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_ensemble_formats",
+  "info": {
+    "displayName": "Ensemble format"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "points": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    },
+    "button_link": {
+      "type": "string"
+    },
+    "youtube_videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::youtube-video.youtube-video"
+    }
+  },
+  "config": {}
+}

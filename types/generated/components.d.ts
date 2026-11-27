@@ -149,6 +149,40 @@ export interface SharedCommonHeroWithoutImage extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEnsembleFormat extends Struct.ComponentSchema {
+  collectionName: 'components_shared_ensemble_formats';
+  info: {
+    displayName: 'Ensemble format';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    points: Schema.Attribute.Component<'shared.text', true>;
+    summary: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    youtube_videos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::youtube-video.youtube-video'
+    >;
+  };
+}
+
+export interface SharedEnsembleIntro extends Struct.ComponentSchema {
+  collectionName: 'components_shared_ensemble_intros';
+  info: {
+    displayName: 'Ensemble intro';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    hero_image: Schema.Attribute.Media<'images'>;
+    section_name: Schema.Attribute.String;
+    stat_label: Schema.Attribute.String;
+    stat_unit: Schema.Attribute.String;
+    stat_value: Schema.Attribute.String;
+    stats_image: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface SharedExperienceSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_experience_sections';
   info: {
@@ -301,6 +335,17 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_shared_section_headings';
+  info: {
+    displayName: 'Section heading';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    section_name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -351,6 +396,33 @@ export interface SharedSurpriseSingerScetion extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     section_name: Schema.Attribute.String;
     singers: Schema.Attribute.Relation<'oneToMany', 'api::singer.singer'>;
+  };
+}
+
+export interface SharedTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials';
+  info: {
+    displayName: 'Testimonial';
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+    quote: Schema.Attribute.Text;
+    truncated: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
+export interface SharedTestimonialSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonial_sections';
+  info: {
+    displayName: 'Testimonial section';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    decor: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.String;
+    testimonials: Schema.Attribute.Component<'shared.testimonial', true>;
   };
 }
 
@@ -485,6 +557,8 @@ declare module '@strapi/strapi' {
       'shared.booking-process-section': SharedBookingProcessSection;
       'shared.common-hero': SharedCommonHero;
       'shared.common-hero-without-image': SharedCommonHeroWithoutImage;
+      'shared.ensemble-format': SharedEnsembleFormat;
+      'shared.ensemble-intro': SharedEnsembleIntro;
       'shared.experience-section': SharedExperienceSection;
       'shared.faq-section': SharedFaqSection;
       'shared.featured-ensemble': SharedFeaturedEnsemble;
@@ -496,10 +570,13 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rating-section': SharedRatingSection;
       'shared.rich-text': SharedRichText;
+      'shared.section-heading': SharedSectionHeading;
       'shared.seo': SharedSeo;
       'shared.singers-with-category': SharedSingersWithCategory;
       'shared.slider': SharedSlider;
       'shared.surprise-singer-scetion': SharedSurpriseSingerScetion;
+      'shared.testimonial': SharedTestimonial;
+      'shared.testimonial-section': SharedTestimonialSection;
       'shared.text': SharedText;
       'shared.tiles-section': SharedTilesSection;
       'shared.tiles-with-link': SharedTilesWithLink;

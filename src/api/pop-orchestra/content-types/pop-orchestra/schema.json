@@ -1,0 +1,60 @@
+{
+  "kind": "singleType",
+  "collectionName": "pop_orchestras",
+  "info": {
+    "singularName": "pop-orchestra",
+    "pluralName": "pop-orchestras",
+    "displayName": "Pop Orchestra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.ensemble-intro",
+      "repeatable": false
+    },
+    "formats": {
+      "type": "component",
+      "component": "shared.ensemble-format",
+      "repeatable": true
+    },
+    "singer": {
+      "type": "component",
+      "component": "shared.surprise-singer-scetion",
+      "repeatable": false
+    },
+    "grandeur_strip": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": false
+    },
+    "grandeur_image": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": false
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "shared.testimonial-section",
+      "repeatable": false
+    },
+    "image_slider": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": false
+    },
+    "other_ensembles": {
+      "type": "component",
+      "component": "shared.band-format",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}
