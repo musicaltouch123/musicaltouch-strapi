@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "special_acts",
+  "info": {
+    "singularName": "special-act",
+    "pluralName": "special-acts",
+    "displayName": "Special Act"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.common-hero-without-image",
+      "repeatable": false
+    },
+    "magicians_section": {
+      "type": "component",
+      "component": "shared.common-hero-without-image",
+      "repeatable": false
+    },
+    "circus_section": {
+      "type": "component",
+      "component": "shared.common-hero-without-image",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}

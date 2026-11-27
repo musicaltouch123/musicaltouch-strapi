@@ -832,6 +832,33 @@ export interface ApiCustomInstrumentalCustomInstrumental
   };
 }
 
+export interface ApiDjDj extends Struct.SingleTypeSchema {
+  collectionName: 'djs';
+  info: {
+    displayName: 'DJ';
+    pluralName: 'djs';
+    singularName: 'dj';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    hero: Schema.Attribute.Component<'shared.common-hero-without-image', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::dj.dj'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1151,6 +1178,43 @@ export interface ApiSingerSinger extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::youtube-video.youtube-video'
     >;
+  };
+}
+
+export interface ApiSpecialActSpecialAct extends Struct.SingleTypeSchema {
+  collectionName: 'special_acts';
+  info: {
+    displayName: 'Special Act';
+    pluralName: 'special-acts';
+    singularName: 'special-act';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    circus_section: Schema.Attribute.Component<
+      'shared.common-hero-without-image',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    hero: Schema.Attribute.Component<'shared.common-hero-without-image', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::special-act.special-act'
+    > &
+      Schema.Attribute.Private;
+    magicians_section: Schema.Attribute.Component<
+      'shared.common-hero-without-image',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1915,6 +1979,7 @@ declare module '@strapi/strapi' {
       'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
       'api::custom-instrumental.custom-instrumental': ApiCustomInstrumentalCustomInstrumental;
+      'api::dj.dj': ApiDjDj;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::jazz-band.jazz-band': ApiJazzBandJazzBand;
@@ -1923,6 +1988,7 @@ declare module '@strapi/strapi' {
       'api::private-party.private-party': ApiPrivatePartyPrivateParty;
       'api::signature-band.signature-band': ApiSignatureBandSignatureBand;
       'api::singer.singer': ApiSingerSinger;
+      'api::special-act.special-act': ApiSpecialActSpecialAct;
       'api::specialty-ensemble.specialty-ensemble': ApiSpecialtyEnsembleSpecialtyEnsemble;
       'api::string-quartet.string-quartet': ApiStringQuartetStringQuartet;
       'api::wedding-emcee.wedding-emcee': ApiWeddingEmceeWeddingEmcee;

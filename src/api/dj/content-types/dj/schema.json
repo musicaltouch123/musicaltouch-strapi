@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "djs",
+  "info": {
+    "singularName": "dj",
+    "pluralName": "djs",
+    "displayName": "DJ"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.common-hero-without-image",
+      "repeatable": false
+    },
+    "faq": {
+      "type": "component",
+      "component": "shared.faq-section",
+      "repeatable": false
+    },
+    "enquiry": {
+      "type": "component",
+      "component": "shared.about-and-csr-enquiry",
+      "repeatable": false
+    }
+  }
+}
