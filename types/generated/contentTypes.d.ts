@@ -676,6 +676,38 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCorporateEmceeCorporateEmcee
+  extends Struct.SingleTypeSchema {
+  collectionName: 'corporate_emcees';
+  info: {
+    displayName: 'Corporate Emcee';
+    pluralName: 'corporate-emcees';
+    singularName: 'corporate-emcee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    feature_image: Schema.Attribute.Component<'shared.feature-image', false>;
+    hero: Schema.Attribute.Component<'shared.common-hero-without-image', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::corporate-emcee.corporate-emcee'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCorporateCorporate extends Struct.SingleTypeSchema {
   collectionName: 'corporates';
   info: {
@@ -1191,6 +1223,37 @@ export interface ApiStringQuartetStringQuartet extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     repertoire: Schema.Attribute.Component<'shared.repertoire-section', false>;
     story_section: Schema.Attribute.Component<'shared.story-banner', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWeddingEmceeWeddingEmcee extends Struct.SingleTypeSchema {
+  collectionName: 'wedding_emcees';
+  info: {
+    displayName: 'Wedding Emcee';
+    pluralName: 'wedding-emcees';
+    singularName: 'wedding-emcee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enquiry: Schema.Attribute.Component<'shared.about-and-csr-enquiry', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    feature_image: Schema.Attribute.Component<'shared.feature-image', false>;
+    hero: Schema.Attribute.Component<'shared.common-hero-without-image', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::wedding-emcee.wedding-emcee'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1848,6 +1911,7 @@ declare module '@strapi/strapi' {
       'api::band-category.band-category': ApiBandCategoryBandCategory;
       'api::band-type.band-type': ApiBandTypeBandType;
       'api::category.category': ApiCategoryCategory;
+      'api::corporate-emcee.corporate-emcee': ApiCorporateEmceeCorporateEmcee;
       'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
       'api::custom-instrumental.custom-instrumental': ApiCustomInstrumentalCustomInstrumental;
@@ -1861,6 +1925,7 @@ declare module '@strapi/strapi' {
       'api::singer.singer': ApiSingerSinger;
       'api::specialty-ensemble.specialty-ensemble': ApiSpecialtyEnsembleSpecialtyEnsemble;
       'api::string-quartet.string-quartet': ApiStringQuartetStringQuartet;
+      'api::wedding-emcee.wedding-emcee': ApiWeddingEmceeWeddingEmcee;
       'api::wedding.wedding': ApiWeddingWedding;
       'api::worship-band.worship-band': ApiWorshipBandWorshipBand;
       'api::youtube-video.youtube-video': ApiYoutubeVideoYoutubeVideo;

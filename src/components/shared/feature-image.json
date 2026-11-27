@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_feature_images",
+  "info": { "displayName": "Feature image" },
+  "options": {},
+  "attributes": {
+    "files": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "quote": { "type": "text" }
+  },
+  "config": {}
+}

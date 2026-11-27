@@ -263,6 +263,17 @@ export interface SharedFaqSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFeatureImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_feature_images';
+  info: {
+    displayName: 'Feature image';
+  };
+  attributes: {
+    files: Schema.Attribute.Media<'images', true>;
+    quote: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedFeaturedEnsemble extends Struct.ComponentSchema {
   collectionName: 'components_shared_featured_ensembles';
   info: {
@@ -677,6 +688,7 @@ declare module '@strapi/strapi' {
       'shared.ensemble-intro': SharedEnsembleIntro;
       'shared.experience-section': SharedExperienceSection;
       'shared.faq-section': SharedFaqSection;
+      'shared.feature-image': SharedFeatureImage;
       'shared.featured-ensemble': SharedFeaturedEnsemble;
       'shared.heading-sub-heading-and-repeated-line': SharedHeadingSubHeadingAndRepeatedLine;
       'shared.hero': SharedHero;
