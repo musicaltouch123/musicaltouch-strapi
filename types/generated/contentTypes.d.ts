@@ -832,6 +832,55 @@ export interface ApiCustomInstrumentalCustomInstrumental
   };
 }
 
+export interface ApiDjProfileDjProfile extends Struct.CollectionTypeSchema {
+  collectionName: 'dj_profiles';
+  info: {
+    displayName: 'DJ Profile';
+    pluralName: 'dj-profiles';
+    singularName: 'dj-profile';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    also_consider: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    behind_the_music: Schema.Attribute.Text;
+    card_image: Schema.Attribute.Media<'images'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    hero_image: Schema.Attribute.Media<'images'>;
+    insta_link: Schema.Attribute.String;
+    live_set: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::youtube-video.youtube-video'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dj-profile.dj-profile'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    one_liner: Schema.Attribute.Text;
+    order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    selected_appearances: Schema.Attribute.Media<'images', true>;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    soundcloud_link: Schema.Attribute.String;
+    spotlight_image: Schema.Attribute.Media<'images'>;
+    tier: Schema.Attribute.Enumeration<['Gold', 'Silver', 'Bronze']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Bronze'>;
+    tiktok_link: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtube_link: Schema.Attribute.String;
+  };
+}
+
 export interface ApiDjDj extends Struct.SingleTypeSchema {
   collectionName: 'djs';
   info: {
@@ -1979,6 +2028,7 @@ declare module '@strapi/strapi' {
       'api::corporate.corporate': ApiCorporateCorporate;
       'api::csr.csr': ApiCsrCsr;
       'api::custom-instrumental.custom-instrumental': ApiCustomInstrumentalCustomInstrumental;
+      'api::dj-profile.dj-profile': ApiDjProfileDjProfile;
       'api::dj.dj': ApiDjDj;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;

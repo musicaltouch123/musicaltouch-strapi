@@ -1,0 +1,95 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dj_profiles",
+  "info": {
+    "singularName": "dj-profile",
+    "pluralName": "dj-profiles",
+    "displayName": "DJ Profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "Gold",
+        "Silver",
+        "Bronze"
+      ],
+      "required": true,
+      "default": "Bronze"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "card_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "one_liner": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "insta_link": {
+      "type": "string"
+    },
+    "youtube_link": {
+      "type": "string"
+    },
+    "tiktok_link": {
+      "type": "string"
+    },
+    "spotlight_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "behind_the_music": {
+      "type": "text"
+    },
+    "selected_appearances": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "soundcloud_link": {
+      "type": "string"
+    },
+    "live_set": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::youtube-video.youtube-video"
+    },
+    "also_consider": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
